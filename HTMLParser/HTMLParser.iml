@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jolie" level="project" />
     <orderEntry type="library" name="org.jsoup:jsoup:1.8.1" level="project" />
+    <orderEntry type="library" name="jolie" level="project" />
   </component>
 </module>
