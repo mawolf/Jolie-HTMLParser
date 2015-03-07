@@ -1,7 +1,7 @@
 type HTMLElement:void {
 	.name:string
 	.value?:string
-	.child*:HTMLElement
+	.tag*:HTMLElement
 }
 
 type HTMLDocument:void {

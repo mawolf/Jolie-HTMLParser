@@ -29,11 +29,9 @@ public class HTMLParser extends JavaService {
     private Value elementToValue(Element element) {
         Value result = Value.create();
         result.getNewChild("name").setValue(element.nodeName());
+        result.getNewChild("value").setValue(element.ownText());
 
-        if ( element.ownText() != null )
-            result.getNewChild("value").setValue(element.ownText());
-
-        ValueVector children = result.getChildren("child");
+        ValueVector children = result.getChildren("tag");
         for (Element child : element.children()) {
             children.add(elementToValue(child));
         }
@@ -59,7 +57,7 @@ public class HTMLParser extends JavaService {
         Document doc = Jsoup.parse(html);
         Value result = Value.create();
         ValueVector elements = result.getChildren("element");
-        for (Element element : doc.select(selection) ) {
+        for (Element element : doc.select(selection)) {
             elements.add(elementToValue(element));
         }
 
