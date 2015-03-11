@@ -18,14 +18,14 @@ type HTMLSelectionResult:void {
 	.element*:HTMLElement
 }
 
-interface XmlUtilsInterface{
+interface HTMLParserInterface{
 RequestResponse:
 	parse( string )(HTMLDocument),
 	select(HTMLSelection)(HTMLSelectionResult)
 }
 
 outputPort HTMLParser {
-	Interfaces: XmlUtilsInterface
+	Interfaces: HTMLParserInterface
 }
 
 embedded {
